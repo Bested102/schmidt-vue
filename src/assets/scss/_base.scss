@@ -1,0 +1,90 @@
+@use 'sass:color';
+
+:root {
+  --header-height: 65px;
+}
+
+$base: 8px;
+$primary: #d5c455;
+$offBlack: #222222;
+$secondary:#999999;
+$background: #f8f8f8;
+
+$breakpoints: (
+  "sm": 480px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+);
+
+@mixin sm {
+  @media (max-width: (map-get($breakpoints, "sm") - 1px)) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: (map-get($breakpoints, "md") - 1px)) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: (map-get($breakpoints, "lg") - 1px)) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (max-width: (map-get($breakpoints, "xl") - 1px)) {
+    @content;
+  }
+}
+
+@mixin sm-min {
+  @media (min-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+
+@mixin md-min {
+  @media (min-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+
+@mixin lg-min {
+  @media (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+@mixin xl-min {
+  @media (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+
+@mixin sm-sp {
+  @media (min-width: map-get($breakpoints, "sm")) and (max-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+
+@mixin md-sp {
+  @media (min-width: map-get($breakpoints, "md")) and (max-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+@mixin lg-sp {
+  @media (min-width: map-get($breakpoints, "lg")) and (max-width: map-get($breakpoints, "xl") ){
+    @content;
+  }
+}
+
+@mixin breakpoint($bp: 0) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
