@@ -4,7 +4,7 @@
       <div class="info">
         <p class="job">UI/UX Designer & Developer</p>
         <h1>
-          I'm John Schmidt
+          I'm Aku
         </h1>
         <div class="buttons">
           <div class="more">
